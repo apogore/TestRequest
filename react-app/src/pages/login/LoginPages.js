@@ -18,6 +18,7 @@ const LoginPage = () => {
       });
       const response = await axiosInstance.post(LOGIN_URL, jsonData, {
         headers: { "Content-Type": "application/json" },
+        withCredentials: true,
       });
       console.log(response);
       setSuccess("Успешно!\n"+response.data);
@@ -26,7 +27,7 @@ const LoginPage = () => {
       console.log(err);
       console.log(err.response?.data);
       if (err.code === "ERR_NETWORK") { 
-        setError("Ошибка CORS: запрос был заблокирован из-за политики безопасности CORS. Подробнее в логах.");
+        setError("Ошибка CORS или неверный адресс. Подробнее в логах.");
       } else {
         setError(err.response.data); // Предположим, что данные об ошибке доступны в response.data
       }
