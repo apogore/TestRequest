@@ -2,7 +2,7 @@ import React from "react";
 import Navigator from "./Navigator";
 import LoginPage from "./pages/login/LoginPages";
 import { useState } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { updateApiUrl } from "./api/axios";
 
 function App() {
