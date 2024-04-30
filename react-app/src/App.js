@@ -6,7 +6,7 @@ import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { updateApiUrl } from "./api/axios";
 
 function App() {
-  const initialApiUrl = "http://artefomak-001-site1.ftempurl.com/api";
+  const initialApiUrl = "https://artefomak-001-site1.ftempurl.com/api";
   const [newApiUrl, setNewApiUrl] = useState(() => {
     // Используем localStorage для сохранения значения newApiUrl при загрузке компонента
     return localStorage.getItem("api") || initialApiUrl;
