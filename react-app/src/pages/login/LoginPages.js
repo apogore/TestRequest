@@ -33,6 +33,7 @@ const LoginPage = () => {
   return (
     <div style={{ maxWidth: '400px', margin: 'auto', textAlign: 'center' }}>
       <h2>Тест логина</h2>
+      <form onSubmit={handleLogin}> 
       <input
         type="text"
         placeholder="Имя пользователя"
@@ -47,12 +48,15 @@ const LoginPage = () => {
         onChange={(e) => setPassword(e.target.value)}
         style={{ width: '100%', marginBottom: '10px', padding: '8px' }}
       />
+      
       <button
-        onClick={handleLogin}
+        type="submit"
         style={{ width: '100%', backgroundColor: 'blue', color: 'white', padding: '10px', border: 'none', borderRadius: '5px', cursor: 'pointer' }}
       >
         Войти
       </button>
+      </form>
+      
       {success && <div style={{ color: 'green', marginTop: '10px' }}>{success}</div>}
       {error && <div style={{ color: 'red', marginTop: '10px' }}>{error}</div>}
       {fullMessage && <div style={{ color: 'black', marginTop: '10px', textAlign: 'left' }}>{fullMessage}</div>}
