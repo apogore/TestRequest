@@ -25,12 +25,8 @@ const LoginPage = () => {
       setFullMessage("Ответ от сервера: " + response.data);
     } catch (err) {
       console.log(err);
-      console.log(err.response?.data);
-      if (err.code === "ERR_NETWORK") { 
-        setError("Ошибка CORS или неверный адресс. Подробнее в логах.");
-      } else {
-        setError(err.response.data); // Предположим, что данные об ошибке доступны в response.data
-      }
+      setError(err.message);
+      setFullMessage(JSON.stringify(err));
     }
   };
 
@@ -59,7 +55,7 @@ const LoginPage = () => {
       </button>
       {success && <div style={{ color: 'green', marginTop: '10px' }}>{success}</div>}
       {error && <div style={{ color: 'red', marginTop: '10px' }}>{error}</div>}
-      {fullMessage && <div style={{ color: 'black', marginTop: '10px' }}>{fullMessage}</div>}
+      {fullMessage && <div style={{ color: 'black', marginTop: '10px', textAlign: 'left' }}>{fullMessage}</div>}
     </div>
   );
 };
