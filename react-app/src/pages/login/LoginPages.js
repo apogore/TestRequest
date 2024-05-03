@@ -18,7 +18,6 @@ const LoginPage = () => {
       });
       const response = await axiosInstance.post(LOGIN_URL, jsonData, {
         headers: { "Content-Type": "application/json" },
-        withCredentials: true,
       });
       console.log(response);
       setSuccess("Успешно!\n"+response.data);
