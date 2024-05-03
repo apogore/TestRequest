@@ -15,6 +15,9 @@ const NavigationPage = () => {
   const navigateToHobbies = () => {
     navigate("/hobbies");
   };
+  const navigateToOwnGet = () => {
+    navigate("/ownget");
+  };
 
   return (
     <div style={{ maxWidth: "600px", margin: "auto" }}>
@@ -82,6 +85,22 @@ const NavigationPage = () => {
                 Хобби
               </button>
             </td>
+          </tr>
+          <tr>
+          <button
+                onClick={navigateToOwnGet}
+                style={{
+                    backgroundColor: "blue",
+                    color: "white",
+                    border: "1px solid black",
+                    padding: "10px 20px",
+                    borderRadius: "5px",
+                    marginRight: "10px",
+                    cursor: "pointer",
+                  }}
+              >
+                Собственный GET запрос
+              </button>
           </tr>
         </tbody>
       </table>

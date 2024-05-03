@@ -1,6 +1,7 @@
 import React from "react";
 import Navigator from "./Navigator";
 import LoginPage from "./pages/login/LoginPages";
+import OwnGet from "./pages/OwnGet";
 import { useState } from "react";
 import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { updateApiUrl } from "./api/axios";
@@ -71,6 +72,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigator />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/ownget" element={<OwnGet />} />
         </Routes>
         <div style={{ textAlign: "center" }}>
           <Link to="/">
